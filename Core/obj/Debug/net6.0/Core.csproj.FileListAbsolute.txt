@@ -1,0 +1,12 @@
+D:\Project\travelers_backend\Core\bin\Debug\net6.0\Core.deps.json
+D:\Project\travelers_backend\Core\bin\Debug\net6.0\Core.dll
+D:\Project\travelers_backend\Core\bin\Debug\net6.0\Core.pdb
+D:\Project\travelers_backend\Core\obj\Debug\net6.0\Core.csproj.AssemblyReference.cache
+D:\Project\travelers_backend\Core\obj\Debug\net6.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\travelers_backend\Core\obj\Debug\net6.0\Core.AssemblyInfoInputs.cache
+D:\Project\travelers_backend\Core\obj\Debug\net6.0\Core.AssemblyInfo.cs
+D:\Project\travelers_backend\Core\obj\Debug\net6.0\Core.csproj.CoreCompileInputs.cache
+D:\Project\travelers_backend\Core\obj\Debug\net6.0\Core.dll
+D:\Project\travelers_backend\Core\obj\Debug\net6.0\refint\Core.dll
+D:\Project\travelers_backend\Core\obj\Debug\net6.0\Core.pdb
+D:\Project\travelers_backend\Core\obj\Debug\net6.0\ref\Core.dll
