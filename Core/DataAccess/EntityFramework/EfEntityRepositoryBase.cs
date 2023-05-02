@@ -33,7 +33,7 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
-        public TEntity Get(Expression<Func<TEntity, bool>> filter)
+        public TEntity Get(Expression<Func<TEntity, bool>>? filter)
         {
             using (var context = new TContext())
             {
@@ -41,7 +41,7 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
-        public IList<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null)
+        public IList<TEntity> GetList(Expression<Func<TEntity, bool>>? filter = null)
         {
             using (var context = new TContext())
             {

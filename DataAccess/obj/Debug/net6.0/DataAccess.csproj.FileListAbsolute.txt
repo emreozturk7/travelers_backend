@@ -10,3 +10,8 @@ D:\Project\travelers_backend\DataAccess\obj\Debug\net6.0\DataAccess.dll
 D:\Project\travelers_backend\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
 D:\Project\travelers_backend\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 D:\Project\travelers_backend\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
+D:\Project\travelers_backend\DataAccess\bin\Debug\net6.0\Core.dll
+D:\Project\travelers_backend\DataAccess\bin\Debug\net6.0\Entities.dll
+D:\Project\travelers_backend\DataAccess\bin\Debug\net6.0\Core.pdb
+D:\Project\travelers_backend\DataAccess\bin\Debug\net6.0\Entities.pdb
+D:\Project\travelers_backend\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CopyComplete

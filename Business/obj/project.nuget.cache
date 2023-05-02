@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OtSj7u0eNOTrFsNEtrjOodnxryPdoq3IdG4hAjPgMvkyeZsmPIpRYPqC2oILDhk1Z0DJkzbwIFAsppSvPVPYBA==",
+  "dgSpecHash": "4XDQAw+zhE+m1+MpYGp7Ee0x/T0hhAb/t9DOqW5F2Ktbq/200SqoI/1o91E+2F5UEi2jCmUo3Ilzp/GDnz4Qmg==",
   "success": true,
   "projectFilePath": "D:\\Project\\travelers_backend\\Business\\Business.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Furkan\\.nuget\\packages\\autofac\\7.0.1\\autofac.7.0.1.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
