@@ -10,9 +10,9 @@ namespace Business.Abstract
 {
     public interface IProductService
     {
-        IDateResult<Product> GetById(int productId);
-        IDateResult<List<Product>> GetList();
-        IDateResult<List<Product>> GetListCategory(int categoryId);
+        IDataResult<Product> GetById(int productId);
+        IDataResult<List<Product>> GetList();
+        IDataResult<List<Product>> GetListCategory(int categoryId);
         IResult Add(Product product);
         IResult Delete(Product product);
         IResult Update(Product product);

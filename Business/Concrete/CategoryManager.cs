@@ -1,5 +1,5 @@
 ﻿using Business.Abstract;
-using Business.Contants;
+using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
@@ -21,7 +21,7 @@ namespace Business.Concrete
             _categoryDal = categoryDal;
         }
 
-        public IDateResult<List<Category>> GetList()
+        public IDataResult<List<Category>> GetList()
         {
             return new SuccessDataResult<List<Category>>(_categoryDal.GetList().ToList());
         }

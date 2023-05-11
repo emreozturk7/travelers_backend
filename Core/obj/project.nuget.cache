@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "u8CYEe8c6Gtsb9cW9okgBzXNN0Hqyph25MO3oZhmQB3kp2DDVAEdLetme52RA/69jrCMMELEceinO12wc59jaw==",
+  "dgSpecHash": "cuQna1nYANwGQPBWs27XMm2yNz/8lAEDKhjgnQcdXbNM471MGX4JGS80Zl0A70UU4X+35w1clo5gRQVA8c7bgw==",
   "success": true,
   "projectFilePath": "D:\\Project\\travelers_backend\\Core\\Core.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.extensions.configuration.binder\\7.0.4\\microsoft.extensions.configuration.binder.7.0.4.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Furkan\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",

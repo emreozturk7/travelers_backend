@@ -10,7 +10,7 @@ namespace Business.Abstract
 {
     public interface ICategoryService
     {
-        IDateResult<List<Category>> GetList();
+        IDataResult<List<Category>> GetList();
         IResult Add(Category category);
         IResult Delete(Category category);
         IResult Update(Category category);

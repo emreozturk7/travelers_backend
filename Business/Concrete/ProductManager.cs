@@ -1,5 +1,5 @@
 ﻿using Business.Abstract;
-using Business.Contants;
+using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -33,17 +33,17 @@ namespace Business.Concrete
             return new SuccessResult(Messages.ProductDeleted);
         }
 
-        public IDateResult<Product> GetById(int productId)
+        public IDataResult<Product> GetById(int productId)
         {
             return new SuccessDataResult<Product>(_productDal.Get(filter: p => p.ProductId == productId));
         }
 
-        public IDateResult<List<Product>> GetList()
+        public IDataResult<List<Product>> GetList()
         {
             return new SuccessDataResult<List<Product>>(_productDal.GetList().ToList());
         }
 
-        public IDateResult<List<Product>> GetListCategory(int categoryId)
+        public IDataResult<List<Product>> GetListCategory(int categoryId)
         {
             return new SuccessDataResult<List<Product>>(_productDal.GetList(filter: p => p.CategoryId == categoryId).ToList());
         }
