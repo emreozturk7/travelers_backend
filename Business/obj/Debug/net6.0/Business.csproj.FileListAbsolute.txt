@@ -1,8 +1,3 @@
-D:\Project\travelers_backend\Business\obj\Debug\net6.0\Business.csproj.AssemblyReference.cache
-D:\Project\travelers_backend\Business\obj\Debug\net6.0\Business.GeneratedMSBuildEditorConfig.editorconfig
-D:\Project\travelers_backend\Business\obj\Debug\net6.0\Business.AssemblyInfoInputs.cache
-D:\Project\travelers_backend\Business\obj\Debug\net6.0\Business.AssemblyInfo.cs
-D:\Project\travelers_backend\Business\obj\Debug\net6.0\Business.csproj.CoreCompileInputs.cache
 D:\Project\travelers_backend\Business\bin\Debug\net6.0\Business.deps.json
 D:\Project\travelers_backend\Business\bin\Debug\net6.0\Business.dll
 D:\Project\travelers_backend\Business\bin\Debug\net6.0\Business.pdb
@@ -12,6 +7,11 @@ D:\Project\travelers_backend\Business\bin\Debug\net6.0\Entities.dll
 D:\Project\travelers_backend\Business\bin\Debug\net6.0\DataAccess.pdb
 D:\Project\travelers_backend\Business\bin\Debug\net6.0\Entities.pdb
 D:\Project\travelers_backend\Business\bin\Debug\net6.0\Core.pdb
+D:\Project\travelers_backend\Business\obj\Debug\net6.0\Business.csproj.AssemblyReference.cache
+D:\Project\travelers_backend\Business\obj\Debug\net6.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\travelers_backend\Business\obj\Debug\net6.0\Business.AssemblyInfoInputs.cache
+D:\Project\travelers_backend\Business\obj\Debug\net6.0\Business.AssemblyInfo.cs
+D:\Project\travelers_backend\Business\obj\Debug\net6.0\Business.csproj.CoreCompileInputs.cache
 D:\Project\travelers_backend\Business\obj\Debug\net6.0\Business.csproj.CopyComplete
 D:\Project\travelers_backend\Business\obj\Debug\net6.0\Business.dll
 D:\Project\travelers_backend\Business\obj\Debug\net6.0\refint\Business.dll
