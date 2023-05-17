@@ -4,10 +4,8 @@ using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using Core.Utilities.Security.Hashing;
 using Core.Utilities.Security.Jwt;
-using Entities.Concrete;
 using Entities.Dtos;
 using System.Net;
-using System.Net.Http.Headers;
 using System.Net.Mail;
 
 namespace Business.Concrete
@@ -80,7 +78,7 @@ namespace Business.Concrete
             if (user != null)
             {
                 var deneme = new ResetPassword
-                {    
+                {
                     Code = getCode(),
                     Status = true,
                     UserId = 1
@@ -88,11 +86,11 @@ namespace Business.Concrete
                 _resetService.Add(deneme);
                 string text = "Sıfırlama için kodunuz : " + getCode();
                 string subject = "Parola sıfırlama";
-                MailMessage msg = new MailMessage("travelersapp0@gmail.com", resetPassword.Email, subject, text);
+                MailMessage msg = new MailMessage("travelersapp@yandex.com.tr", resetPassword.Email, subject, text);
                 msg.IsBodyHtml = true;
-                SmtpClient smtpClient = new SmtpClient("smtp.yandex.com.tr", 465);
+                SmtpClient smtpClient = new SmtpClient("smtp.yandex.com.tr", 587);
                 smtpClient.UseDefaultCredentials = false;
-                NetworkCredential networkCredential = new NetworkCredential("travelersapp@yandex.com", "kujqcaevthhoeiwj");
+                NetworkCredential networkCredential = new NetworkCredential("travelersapp@yandex.com.tr", "kujqcaevthhoeiwj");
                 smtpClient.Credentials = networkCredential;
                 smtpClient.EnableSsl = true;
                 smtpClient.Send(msg);

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\travelers_backend\\Core\\Core.csproj": {}
+    "C:\\Users\\Tringle8\\source\\repos\\travelers_backend\\Core\\Core.csproj": {}
   },
   "projects": {
-    "D:\\Project\\travelers_backend\\Core\\Core.csproj": {
+    "C:\\Users\\Tringle8\\source\\repos\\travelers_backend\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\travelers_backend\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\Tringle8\\source\\repos\\travelers_backend\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "D:\\Project\\travelers_backend\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\Furkan\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\travelers_backend\\Core\\obj\\",
+        "projectPath": "C:\\Users\\Tringle8\\source\\repos\\travelers_backend\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Tringle8\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tringle8\\source\\repos\\travelers_backend\\Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Furkan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tringle8\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
