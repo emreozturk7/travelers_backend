@@ -74,7 +74,6 @@ D:\Project\travelers_backend\WebAPI\obj\Debug\net6.0\WebAPI.GeneratedMSBuildEdit
 D:\Project\travelers_backend\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfoInputs.cache
 D:\Project\travelers_backend\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfo.cs
 D:\Project\travelers_backend\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CoreCompileInputs.cache
-D:\Project\travelers_backend\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
 D:\Project\travelers_backend\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\Project\travelers_backend\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props
 D:\Project\travelers_backend\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.WebAPI.props

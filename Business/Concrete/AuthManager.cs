@@ -16,7 +16,6 @@ namespace Business.Concrete
         private ITokenHelper _tokenHelper;
         private IResetService _resetService;
 
-        private string code = null;
         public AuthManager(IUserService userService, ITokenHelper tokenHelper, IResetService resetService)
         {
             _userService = userService;
@@ -77,14 +76,26 @@ namespace Business.Concrete
 
             if (user != null)
             {
-                var deneme = new ResetPassword
+                var reset = new ResetPassword
                 {
                     Code = getCode(),
                     Status = true,
-                    UserId = 1
+                    UserId = user.Id
                 };
-                _resetService.Add(deneme);
-                string text = "Sıfırlama için kodunuz : " + getCode();
+
+                var kontrol = _resetService.GetById(reset.UserId);
+
+                if (kontrol != null)
+                {
+                    _resetService.Update(reset);
+                }
+
+                else
+                {
+                    _resetService.Add(reset);
+                }
+                
+                string text = "Sıfırlama için kodunuz : " + reset.Code;
                 string subject = "Parola sıfırlama";
                 MailMessage msg = new MailMessage("travelersapp@yandex.com.tr", resetPassword.Email, subject, text);
                 msg.IsBodyHtml = true;
@@ -103,15 +114,13 @@ namespace Business.Concrete
 
         public string getCode()
         {
-            if (code == null)
+            string code = "";
+            Random rnd = new Random();
+
+            for (int i = 0; i < 6; i++)
             {
-                Random rnd = new Random();
-                code = "";
-                for (int i = 0; i < 6; i++)
-                {
-                    char tmp = Convert.ToChar(rnd.Next(48, 58));
-                    code += tmp;
-                }
+                char tmp = Convert.ToChar(rnd.Next(48, 58));
+                code += tmp;
             }
             return code;
         }

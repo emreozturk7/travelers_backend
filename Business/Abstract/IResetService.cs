@@ -1,4 +1,5 @@
 ﻿using Core.Entities.Concrete;
+using Core.Utilities.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,7 @@ namespace Business.Abstract
     public interface IResetService
     {
         void Add(ResetPassword user);
+        IResult Update(ResetPassword user);
+        ResetPassword GetById(int userId);
     }
 }

@@ -1,6 +1,10 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Entities.Concrete;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +25,15 @@ namespace Business.Concrete
         public void Add(ResetPassword reset)
         {
             _resetDal.Add(reset);
+        }
+        public IResult Update(ResetPassword reset)
+        {
+            _resetDal.Update(reset);
+            return new SuccessResult(Messages.CategoryUpdated);
+        }
+        public ResetPassword GetById(int userId)
+        {
+            return _resetDal.Get(filter: u => u.UserId == userId);
         }
     }
 }
