@@ -78,25 +78,30 @@ namespace Business.Concrete
             {
                 var kontrol = _resetService.GetById(user.Id);
 
-                var reset = new ResetPassword
-                {
-                    Id = kontrol.Id,
-                    Code = getCode(),
-                    Status = true,
-                    UserId = user.Id
-                };
-
                 if (kontrol != null)
                 {
+                    var reset = new ResetPassword
+                    {
+                        Id = kontrol.Id,
+                        Code = getCode(),
+                        Status = true,
+                        UserId = user.Id
+                    };
                     _resetService.Update(reset);
                 }
 
                 else
                 {
+                    var reset = new ResetPassword
+                    {
+                        Code = getCode(),
+                        Status = true,
+                        UserId = user.Id
+                    };
                     _resetService.Add(reset);
                 }
                 
-                string text = "Sıfırlama için kodunuz : " + reset.Code;
+                string text = "Sıfırlama için kodunuz : " + getCode();
                 string subject = "Parola sıfırlama";
                 MailMessage msg = new MailMessage("travelersapp@yandex.com.tr", resetPassword.Email, subject, text);
                 msg.IsBodyHtml = true;
