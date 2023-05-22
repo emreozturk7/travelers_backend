@@ -76,14 +76,15 @@ namespace Business.Concrete
 
             if (user != null)
             {
+                var kontrol = _resetService.GetById(user.Id);
+
                 var reset = new ResetPassword
                 {
+                    Id = kontrol.Id,
                     Code = getCode(),
                     Status = true,
                     UserId = user.Id
                 };
-
-                var kontrol = _resetService.GetById(reset.UserId);
 
                 if (kontrol != null)
                 {

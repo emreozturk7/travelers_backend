@@ -11,7 +11,7 @@ namespace Business.Abstract
     public interface IResetService
     {
         void Add(ResetPassword user);
-        IResult Update(ResetPassword user);
+        void Update(ResetPassword user);
         ResetPassword GetById(int userId);
     }
 }

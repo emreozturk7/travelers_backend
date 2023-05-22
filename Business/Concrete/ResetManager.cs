@@ -26,10 +26,9 @@ namespace Business.Concrete
         {
             _resetDal.Add(reset);
         }
-        public IResult Update(ResetPassword reset)
+        public void Update(ResetPassword reset)
         {
             _resetDal.Update(reset);
-            return new SuccessResult(Messages.CategoryUpdated);
         }
         public ResetPassword GetById(int userId)
         {
