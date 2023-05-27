@@ -181,3 +181,4 @@ C:\Users\Tringle8\source\repos\travelers_backend\WebAPI\obj\Debug\net6.0\refint\
 C:\Users\Tringle8\source\repos\travelers_backend\WebAPI\obj\Debug\net6.0\WebAPI.pdb
 C:\Users\Tringle8\source\repos\travelers_backend\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
 C:\Users\Tringle8\source\repos\travelers_backend\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
+D:\Project\travelers_backend\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs

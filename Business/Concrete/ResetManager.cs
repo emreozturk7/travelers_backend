@@ -13,6 +13,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Business.Concrete
 {
@@ -59,7 +60,7 @@ namespace Business.Concrete
                         Status = true,
                         UserId = user.Id
                     };
-                   Update(reset);
+                    Update(reset);
                 }
 
                 else
@@ -82,9 +83,9 @@ namespace Business.Concrete
                 NetworkCredential networkCredential = new NetworkCredential("travelersapp@yandex.com.tr", "kujqcaevthhoeiwj");
                 smtpClient.Credentials = networkCredential;
                 smtpClient.EnableSsl = true;
-                smtpClient.Send(msg);
+               // smtpClient.Send(msg);
 
-                // Timer ekle
+                ChangeStatus(user, kontrol, code);
 
                 return new SuccessDataResult<User>(user, Messages.NewPasswordCodeSend);
             }
@@ -92,13 +93,26 @@ namespace Business.Concrete
             return new ErrorDataResult<User>(user, Messages.NewPasswordCodeNotSend);
         }
 
-        public IDataResult<User> CheckCode(string email, string code) {
+        public IDataResult<User> CheckCode(string email, string code)
+        {
             var user = _userService.GetByMail(email);
+            var statusControl = GetById(user.Id);
 
-            // Check et
+            if (statusControl.Code == code)
+            {
+                var reset = new ResetPassword
+                {
+                    Id = statusControl.Id,
+                    Code = code,
+                    Status = false,
+                    UserId = user.Id
+                };
+                Update(reset);
 
-            
-            return new SuccessDataResult<User>(user, Messages.NewPasswordCodeSend);
+                return new SuccessDataResult<User>(user, Messages.NewStatus);
+            }
+
+            return new ErrorDataResult<User>(user, Messages.StatusNotUpdate);
         }
 
         public string getCode()
@@ -112,6 +126,42 @@ namespace Business.Concrete
                 code += tmp;
             }
             return code;
+        }
+
+        public IDataResult<User> ChangeStatus(User user, ResetPassword kontrol, string code)
+        {
+            var date = DateTime.Now.Date;
+            var hour = DateTime.Now.Hour;
+            var minute = DateTime.Now.Minute;
+            var second = DateTime.Now.Second;
+            var time = new TimeSpan(0, hour, minute, second, 0);
+            var sayac = new TimeSpan(0, 0, 2, 0, 0);
+
+            var sonucDk = time.Minutes + sayac.Minutes;
+            var sonucSan = time.Seconds + sayac.Seconds;
+
+            for (int i = sonucDk; i > 60; i++)
+            {
+                sonucDk = sonucDk - 60;
+                hour = hour + 1;
+            }
+
+            if (DateTime.Now.Minute > sonucDk && DateTime.Now.Hour == hour && DateTime.Now.Date == date)
+            {
+                code = null;
+                var reset = new ResetPassword
+                {
+                    Id = kontrol.Id,
+                    Code = code,
+                    Status = false,
+                    UserId = user.Id
+                };
+                Update(reset);
+
+                return new SuccessDataResult<User>(user, Messages.CodeNotSend);
+            }
+
+            return new ErrorDataResult<User>(user, Messages.CodeNotSend);
         }
     }
 }
