@@ -24,12 +24,15 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<UserManager>().As<IUserService>();
             builder.RegisterType<EfUserDal>().As<IUserDal>();
-  
+
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
 
             builder.RegisterType<ResetManager>().As<IResetService>();
             builder.RegisterType<EfResetDal>().As<IResetDal>();
+
+            builder.RegisterType<AreasManager>().As<IAreasService>();
+            builder.RegisterType<EfAreasDal>().As<IAreasDal>();
 
         }
     }

@@ -83,7 +83,7 @@ namespace Business.Concrete
                 NetworkCredential networkCredential = new NetworkCredential("travelersapp@yandex.com.tr", "kujqcaevthhoeiwj");
                 smtpClient.Credentials = networkCredential;
                 smtpClient.EnableSsl = true;
-               // smtpClient.Send(msg);
+                smtpClient.Send(msg);
 
                 ChangeStatus(user, kontrol, code);
 

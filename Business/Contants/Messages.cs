@@ -32,5 +32,9 @@ namespace Business.Constants
         public static string StatusNotUpdate = "Kod başarıyla gönderildi.";
 
         public static string CodeNotSend = "Kod gönderilemiyor. Zaman aşımına uğradı!";
+
+        public static string AreasAdded = "Alana başarıyla eklendi.";
+        public static string AreasDeleted = "Alan başarıyla silindi.";
+        public static string AreasUpdate = "Alan başarıyla güncellendi.";
     }
 }
