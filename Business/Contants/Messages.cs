@@ -27,5 +27,14 @@ namespace Business.Constants
 
         public static string NewPasswordCodeSend = "Kod başarıyla gönderildi.";
         public static string NewPasswordCodeNotSend = "Kod gönderimi başarısız!";
+
+        public static string NewStatus = "Durum başarılı bir şekilde güncellendi.";
+        public static string StatusNotUpdate = "Kod başarıyla gönderildi.";
+
+        public static string CodeNotSend = "Kod gönderilemiyor. Zaman aşımına uğradı!";
+
+        public static string AreasAdded = "Alana başarıyla eklendi.";
+        public static string AreasDeleted = "Alan başarıyla silindi.";
+        public static string AreasUpdate = "Alan başarıyla güncellendi.";
     }
 }

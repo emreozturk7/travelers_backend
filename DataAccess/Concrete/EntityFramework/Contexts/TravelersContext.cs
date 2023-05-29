@@ -22,5 +22,6 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<User> Users { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<ResetPassword> ResetPassword { get; set; }
+        public DbSet<Areas> Areas { get; set; }
     }
 }
