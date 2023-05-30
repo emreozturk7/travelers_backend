@@ -34,6 +34,8 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<AreasManager>().As<IAreasService>();
             builder.RegisterType<EfAreasDal>().As<IAreasDal>();
 
+            builder.RegisterType<FavoriteManager>().As<IFavoriteService>();
+            builder.RegisterType<EfFavoriteDal>().As<IFavoriteDal>();
         }
     }
 }

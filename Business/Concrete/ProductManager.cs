@@ -22,7 +22,6 @@ namespace Business.Concrete
 
         public IResult Add(Product product)
         {
-            //Business codes
             _productDal.Add(product);
             return new SuccessResult(Messages.ProductAdded);
         }
