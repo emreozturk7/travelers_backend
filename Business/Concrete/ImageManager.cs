@@ -35,7 +35,6 @@ namespace Business.Concrete
                 image.Url.CopyTo(memoryStream);
                 imageData = memoryStream.ToArray();
             }
-            //imageData=  ConvertImageToBytes(image.Url);
 
             var newImage = new ImageEntity
             {
@@ -45,18 +44,7 @@ namespace Business.Concrete
 
             _imageDal.Add(newImage);
 
-
-
-            return new SuccessResult(Messages.FavoriteAdded);
+            return new SuccessResult(Messages.ImageAdded);
         }
-
-        //byte[] ConvertImageToBytes(IFormFile img)
-        //{
-        //    using (MemoryStream ms = new MemoryStream())
-        //    {
-        //        img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-        //        return ms.ToArray();
-        //    }
-        //}
     }
 }
