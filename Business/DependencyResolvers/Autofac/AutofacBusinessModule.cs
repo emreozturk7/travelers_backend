@@ -36,6 +36,9 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<FavoriteManager>().As<IFavoriteService>();
             builder.RegisterType<EfFavoriteDal>().As<IFavoriteDal>();
+
+            builder.RegisterType<ImageManager>().As<IImageService>();
+            builder.RegisterType<EfImageDal>().As<IImageDal>();
         }
     }
 }
