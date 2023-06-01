@@ -24,5 +24,6 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<ResetPassword> ResetPassword { get; set; }
         public DbSet<Areas> Areas { get; set; }
         public DbSet<Favorite> Favorite { get; set; }
+        public DbSet<ImageEntity> Image { get; set; }
     }
 }
