@@ -13,7 +13,8 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionString: @"Server=(localdb)\MSSQLLocalDB;Database=Travelers;Trusted_Connection=true");
+            //optionsBuilder.UseSqlServer(connectionString: @"Server=(localdb)\MSSQLLocalDB;Database=Travelers;Trusted_Connection=true");
+            optionsBuilder.UseNpgsql("Host=containers-us-west-97.railway.app;Port=7556;Database=railway;Username=postgres;Password=hjhEiTvfUT0K1mH3FZMx");
         }
 
         public DbSet<Product> Products { get; set; }
