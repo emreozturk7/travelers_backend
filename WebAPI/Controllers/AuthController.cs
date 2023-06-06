@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Entities.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
@@ -39,12 +40,17 @@ namespace WebAPI.Controllers
                 return BadRequest(userExists.Message);
             }
             var registerResult = _authService.Register(userForRegisterDto, userForRegisterDto.Password);
-            var result = _authService.CreateAccessToken(registerResult.Data);
-            if (result.Succes)
+            if (registerResult.Succes)
             {
-                return Ok(result.Data);
+                var result = _authService.CreateAccessToken(registerResult.Data);
+                if (result.Succes)
+                {
+                    return Ok(result.Data);
+                }
+                return BadRequest(result.Message);
             }
-            return BadRequest(result.Message);
+
+            return BadRequest(Messages.PasswordINvalid);
         }
     }
 }

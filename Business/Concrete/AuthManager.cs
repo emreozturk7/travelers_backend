@@ -7,6 +7,7 @@ using Core.Utilities.Security.Jwt;
 using Entities.Dtos;
 using System.Net;
 using System.Net.Mail;
+using System.Text.RegularExpressions;
 
 namespace Business.Concrete
 {
@@ -47,8 +48,20 @@ namespace Business.Concrete
                 PasswordSalt = passwordSalt,
                 Status = true,
             };
-            _userService.Add(user);
-            return new SuccessDataResult<User>(user, Messages.UserRegistered);
+
+            Regex validateEmail = new Regex("^\\S+@\\S+\\.\\S+$");
+            var controlEmail = validateEmail.IsMatch(user.Email);
+
+            Regex validatePassword = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+            var controlPassword = validatePassword.IsMatch(password);
+
+            if (controlPassword && controlEmail)
+            {
+                _userService.Add(user);
+                return new SuccessDataResult<User>(user, Messages.UserRegistered);
+            }
+
+            return new ErrorDataResult<User>(user, Messages.UserNotRegistered);
         }
 
         public IResult UserExists(string email)
