@@ -38,8 +38,8 @@ namespace Business.Constants
         public static string AreasDeleted = "Alan başarıyla silindi.";
         public static string AreasUpdate = "Alan başarıyla güncellendi.";
 
-        public static string FavoriteAdded = "Favorilere eklendi.";
-        public static string FavoriteUpdate = "Favoriler güncellendi.";
+        public static string FavoriteAdded = "Favorilere başarıyla eklendi.";
+        public static string FavoriteUpdate = "Favoriler başarıyla güncellendi.";
 
         public static string ImageAdded = "Fotoğraf eklendi.";
 
