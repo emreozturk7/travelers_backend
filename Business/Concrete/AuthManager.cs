@@ -5,9 +5,9 @@ using Core.Utilities.Results;
 using Core.Utilities.Security.Hashing;
 using Core.Utilities.Security.Jwt;
 using Entities.Dtos;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Net.Mail;
-using System.Text.RegularExpressions;
 
 namespace Business.Concrete
 {
@@ -49,11 +49,8 @@ namespace Business.Concrete
                 Status = true,
             };
 
-            Regex validateEmail = new Regex("^\\S+@\\S+\\.\\S+$");
-            var controlEmail = validateEmail.IsMatch(user.Email);
-
-            Regex validatePassword = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
-            var controlPassword = validatePassword.IsMatch(password);
+            var controlPassword = PasswordControl(password);
+            var controlEmail = EmailControl(user.Email);
 
             if (controlPassword && controlEmail)
             {
@@ -78,6 +75,48 @@ namespace Business.Concrete
             var claims = _userService.GetClaims(user);
             var accessToken = _tokenHelper.CreateToken(user, claims);
             return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
+        }
+
+        public static bool PasswordControl(string password)
+        {
+            int counter = 0;
+
+            if (password.Contains(" "))
+                return false;
+
+            if (password.Length < 8)
+                return false;
+
+            foreach (char c in password)
+            {
+                if (Char.IsDigit(c)) { counter++; }
+            }
+
+            if (counter == 0)
+                return false;
+
+            return true;
+        }
+
+        public static bool EmailControl(string email)
+        {
+            try
+            {
+                MailAddress mail = new MailAddress(email);
+                bool Validcontrol = mail.Host.Contains(".");
+
+                if (Validcontrol)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
