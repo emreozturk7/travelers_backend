@@ -8,6 +8,7 @@ using Entities.Dtos;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Net.Mail;
+using System.Text.RegularExpressions;
 
 namespace Business.Concrete
 {
@@ -100,23 +101,30 @@ namespace Business.Concrete
 
         public static bool EmailControl(string email)
         {
-            try
-            {
-                MailAddress mail = new MailAddress(email);
-                bool Validcontrol = mail.Host.Contains(".");
+            int counter = 0;
 
-                if (Validcontrol)
+            for (int i = 0; i < email.Length; i++)
+            {
+                string convert = email[i].ToString();
+
+                if (email.Length - 2 == i || email.Length - 3 == i || email.Length - 4 == i)
                 {
-                    return true;
+                    if (convert == ".")
+                        counter++;
                 }
 
-                return false;
+                if (email.Length - 5 == i || email.Length - 6 == i || email.Length - 7 == i || email.Length - 8 == i ||
+                    email.Length - 9 == i || email.Length - 10 == i || email.Length - 11 == i || email.Length - 12 == i)
+                {
+                    if (convert == "@")
+                        counter++;
+                }
             }
 
-            catch (Exception)
-            {
-                throw;
-            }
+            if (counter == 2)
+                return true;
+
+            return false;
         }
     }
 }
