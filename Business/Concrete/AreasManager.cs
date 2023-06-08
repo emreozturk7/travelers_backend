@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.Contants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
@@ -24,13 +25,13 @@ namespace Business.Concrete
         public IResult Add(Areas area)
         {
             _areasDal.Add(area);
-            return new SuccessResult(Messages.AreasAdded);
+            return new SuccessResult(SuccessMessages.AreasAddedSuccess);
         }
 
         public IResult Delete(Areas area)
         {
             _areasDal.Delete(area);
-            return new SuccessResult(Messages.AreasDeleted);
+            return new SuccessResult(SuccessMessages.AreasDeletedSuccess);
         }
 
         public IDataResult<Areas> GetById(int areaId)
@@ -51,7 +52,7 @@ namespace Business.Concrete
         public IResult Update(Areas area)
         {
             _areasDal.Update(area);
-            return new SuccessResult(Messages.AreasUpdate);
+            return new SuccessResult(SuccessMessages.AreasUpdateSuccess);
         }
     }
 }

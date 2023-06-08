@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.Contants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
@@ -44,7 +45,7 @@ namespace Business.Concrete
 
             _imageDal.Add(newImage);
 
-            return new SuccessResult(Messages.ImageAdded);
+            return new SuccessResult(SuccessMessages.ImageAddedSuccess);
         }
     }
 }

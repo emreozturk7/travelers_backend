@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.Contants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -27,13 +28,13 @@ namespace Business.Concrete
         public IResult Add(Favorite favorite)
         {
             _favoriteDal.Add(favorite);
-            return new SuccessResult(Messages.FavoriteAdded);
+            return new SuccessResult(SuccessMessages.FavoriteAddedSuccess);
         }
 
         public IResult Update(Favorite favorite)
         {
             _favoriteDal.Update(favorite);
-            return new SuccessResult(Messages.FavoriteUpdate);
+            return new SuccessResult(SuccessMessages.FavoriteUpdateSuccess);
         }
 
         public IDataResult<Favorite> GetById(int favoriteId)
