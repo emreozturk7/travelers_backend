@@ -14,6 +14,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Business.Contants;
 
 namespace Business.Concrete
 {
@@ -87,10 +88,10 @@ namespace Business.Concrete
 
                 ChangeStatus(user, kontrol, code);
 
-                return new SuccessDataResult<User>(user, Messages.NewPasswordCodeSend);
+                return new SuccessDataResult<User>(user, SuccessMessages.NewPasswordCodeSendSuccess);
             }
 
-            return new ErrorDataResult<User>(user, Messages.NewPasswordCodeNotSend);
+            return new ErrorDataResult<User>(user, ErrorMessages.NewPasswordCodeNotSendError);
         }
 
         public IDataResult<User> CheckCode(string email, string code)
@@ -109,10 +110,10 @@ namespace Business.Concrete
                 };
                 Update(reset);
 
-                return new SuccessDataResult<User>(user, Messages.NewStatus);
+                return new SuccessDataResult<User>(user, SuccessMessages.NewStatusSuccess);
             }
 
-            return new ErrorDataResult<User>(user, Messages.StatusNotUpdate);
+            return new ErrorDataResult<User>(user, ErrorMessages.StatusNotUpdateError);
         }
 
         public string getCode()
@@ -158,10 +159,10 @@ namespace Business.Concrete
                 };
                 Update(reset);
 
-                return new SuccessDataResult<User>(user, Messages.CodeNotSend);
+                return new SuccessDataResult<User>(user, ErrorMessages.CodeNotSendError);
             }
 
-            return new ErrorDataResult<User>(user, Messages.CodeNotSend);
+            return new ErrorDataResult<User>(user, ErrorMessages.CodeNotSendError);
         }
     }
 }

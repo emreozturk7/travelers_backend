@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.Contants;
 using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using Core.Utilities.Security.Hashing;
@@ -27,13 +28,13 @@ namespace Business.Concrete
             var userToCheck = _userService.GetByMail(userForLoginDto.Email);
             if (userToCheck == null)
             {
-                return new ErrorDataResult<User>(Messages.UserNotFound);
+                return new ErrorDataResult<User>(ErrorMessages.UserNotFoundError);
             }
             if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
             {
-                return new ErrorDataResult<User>(Messages.PasswordError);
+                return new ErrorDataResult<User>(ErrorMessages.PasswordError);
             }
-            return new SuccessDataResult<User>(userToCheck, Messages.SuccessfulLogin);
+            return new SuccessDataResult<User>(userToCheck, SuccessMessages.SuccessfulLoginSuccess);
         }
 
         public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)
@@ -56,26 +57,26 @@ namespace Business.Concrete
             if (controlPassword && controlEmail)
             {
                 _userService.Add(user);
-                return new SuccessDataResult<User>(user, Messages.UserRegistered);
+                return new SuccessDataResult<User>(user, SuccessMessages.UserRegisteredSuccess);
             }
 
-            return new ErrorDataResult<User>(user, Messages.UserNotRegistered);
+            return new ErrorDataResult<User>(user, ErrorMessages.UserNotRegisteredError);
         }
 
         public IResult UserExists(string email)
         {
             if (_userService.GetByMail(email) != null)
             {
-                return new ErrorResult(Messages.UserAlreadyExists);
+                return new ErrorResult(ErrorMessages.UserAlreadyExistsError);
             }
-            return new SuccessResult(Messages.UserNotFound);
+            return new SuccessResult(ErrorMessages.UserNotFoundError);
         }
 
         public IDataResult<AccessToken> CreateAccessToken(User user)
         {
             var claims = _userService.GetClaims(user);
             var accessToken = _tokenHelper.CreateToken(user, claims);
-            return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
+            return new SuccessDataResult<AccessToken>(accessToken, SuccessMessages.AccessTokenCreatedSuccess);
         }
 
         public static bool PasswordControl(string password)
@@ -113,8 +114,8 @@ namespace Business.Concrete
                         counter++;
                 }
 
-                if (email.Length - 5 == i || email.Length - 6 == i || email.Length - 7 == i || email.Length - 8 == i ||
-                    email.Length - 9 == i || email.Length - 10 == i || email.Length - 11 == i || email.Length - 12 == i)
+                if (email.Length - 7 == i || email.Length - 8 == i || email.Length - 9 == i ||
+                    email.Length - 10 == i || email.Length - 11 == i || email.Length - 12 == i)
                 {
                     if (convert == "@")
                         counter++;
